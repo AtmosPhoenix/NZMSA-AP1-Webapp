@@ -1,0 +1,8 @@
+.filmInfoComponent {
+    margin: 5px;
+}
+
+.filmInfoComponent.img {
+    width: 240px;
+    height: 340px;
+}

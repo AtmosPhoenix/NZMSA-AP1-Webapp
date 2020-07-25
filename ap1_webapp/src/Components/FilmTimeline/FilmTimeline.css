@@ -1,0 +1,9 @@
+.filmCardContainer {
+    height: 500px;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
