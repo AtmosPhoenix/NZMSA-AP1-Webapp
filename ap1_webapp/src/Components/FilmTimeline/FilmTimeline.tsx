@@ -180,14 +180,14 @@ function FilmTimeline(props: IFilmTimelineProps)
     setEndYear(value >= StartYear + 1 ? value : EndYear);
   }
 
-  function onChangeStartYear(value: number[]) {
+  function onTimelineSliderMoved(value: number[]) {
     let startVal = value[0];
     let endVal = value[1];
     setStartYearSafe(startVal);
     setEndYearSafe(endVal);
   }
 
-  function onTimlineValuesChanged() {
+  function onTimleineSliderReleased() {
     setFilmCardOutput(BuildFilmCardsForDisplay(StartYear, EndYear)); 
   }
 
@@ -200,7 +200,7 @@ function FilmTimeline(props: IFilmTimelineProps)
           min={EarliestSearchYear}
           max={LatestSearchYear - 1}
           value={StartYear}
-          onChange={(value: number) => {setStartYearSafe(value); onTimlineValuesChanged(); }}
+          onChange={(value: any) => {setStartYearSafe(value); onTimleineSliderReleased(); }}
         />
       </Col>
 
@@ -208,8 +208,8 @@ function FilmTimeline(props: IFilmTimelineProps)
         <Slider
           min={EarliestSearchYear}
           max={LatestSearchYear}
-          onChange={onChangeStartYear}
-          onAfterChange={onTimlineValuesChanged}
+          onChange={onTimelineSliderMoved}
+          onAfterChange={onTimleineSliderReleased}
           range value={[StartYear, EndYear]}
           tipFormatter= { null }
         />
@@ -221,7 +221,7 @@ function FilmTimeline(props: IFilmTimelineProps)
           min={EarliestSearchYear + 1}
           max={LatestSearchYear}
           value={EndYear}
-          onChange={(value: any) => {setEndYearSafe(value); onTimlineValuesChanged(); }}
+          onChange={(value: any) => {setEndYearSafe(value); onTimleineSliderReleased(); }}
         />
       </Col>
 
