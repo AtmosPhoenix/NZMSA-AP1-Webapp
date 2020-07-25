@@ -22,6 +22,7 @@ steps:
   - script: |
       cd $(rootDir)
       npm install
+      npm install antd
       npm run build
       cd ..
     displayName: 'npm install and build'
