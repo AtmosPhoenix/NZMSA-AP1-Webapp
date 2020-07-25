@@ -3,7 +3,7 @@ import './App.css';
 import FilmTimeline from './Components/FilmTimeline/FilmTimeline';
 
 import { Layout } from 'antd';
-const { Header, Footer, Sider, Content } = Layout;
+const { Header, Footer, Content } = Layout;
 
 
 function App() {

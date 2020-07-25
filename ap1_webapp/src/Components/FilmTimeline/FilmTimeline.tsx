@@ -172,11 +172,11 @@ function FilmTimeline(props: IFilmTimelineProps)
   const [StartYear, setStartYear] = useState(1980);
   const [EndYear, setEndYear] = useState(2020);
 
-  function setStartYearSafe(value: number) {
+  function setStartYearSafe(value: any) {
     setStartYear(value <= EndYear - 1 ? value : StartYear);
   }
   
-  function setEndYearSafe(value: number) {
+  function setEndYearSafe(value: any) {
     setEndYear(value >= StartYear + 1 ? value : EndYear);
   }
 
@@ -221,7 +221,7 @@ function FilmTimeline(props: IFilmTimelineProps)
           min={EarliestSearchYear + 1}
           max={LatestSearchYear}
           value={EndYear}
-          onChange={(value: number) => {setEndYearSafe(value); onTimlineValuesChanged(); }}
+          onChange={(value: any) => {setEndYearSafe(value); onTimlineValuesChanged(); }}
         />
       </Col>
 
